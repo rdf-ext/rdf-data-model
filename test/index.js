@@ -1,17 +1,18 @@
 'use strict'
+import { namedNodeTests } from './named-node'
+import { blankNodeTests } from './blank-node'
+import { literalTests } from './literal'
+import { defaultGraphTests } from './default-graph'
+import { variableTests } from './variable'
+import { tripleTests } from './triple'
+import { quadTests } from './quad'
 
-function runTests (rdf) {
-  require('./named-node')(rdf)
-  require('./blank-node')(rdf)
-  require('./literal')(rdf)
-  require('./default-graph')(rdf)
-  require('./variable')(rdf)
-  require('./triple')(rdf)
-  require('./quad')(rdf)
+export function runTests (DataFactory) {
+  namedNodeTests(DataFactory)
+  blankNodeTests(DataFactory)
+  literalTests(DataFactory)
+  defaultGraphTests(DataFactory)
+  variableTests(DataFactory)
+  tripleTests(DataFactory)
+  quadTests(DataFactory)
 }
-
-if (global.rdf) {
-  runTests(global.rdf)
-}
-
-module.exports = runTests

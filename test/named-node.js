@@ -2,9 +2,9 @@
 
 /* global describe, it */
 
-var assert = require('assert')
+import assert from 'assert'
 
-function runTests (DataFactory) {
+export function namedNodeTests (DataFactory) {
   describe('.namedNode', function () {
     it('should be a static method', function () {
       assert.equal(typeof DataFactory.namedNode, 'function')
@@ -65,5 +65,3 @@ function runTests (DataFactory) {
     })
   })
 }
-
-module.exports = runTests
